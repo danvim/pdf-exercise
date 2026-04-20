@@ -1,0 +1,13 @@
+@use '../variables' as *;
+
+@mixin tracking($tracking) {
+  letter-spacing: calc((1em / 1000) * $tracking);
+}
+
+@mixin font-size($font-size, $baseline: var(--baseline)) {
+  font-size: $font-size;
+  line-height: $baseline;
+  text-box: trim-both cap alphabetic;
+  padding-top: calc($baseline - $font-size * $font-cap-h);
+  box-decoration-break: clone;
+}

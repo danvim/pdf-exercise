@@ -1,0 +1,22 @@
+@use './typography';
+@use "./components" as comp;
+@use "./variables" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wdth,wght@0,75..125,200..900;1,75..125,200..900&display=swap');
+
+* {
+  font-synthesis: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Mona Sans", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-feature-settings:
+    "case" on,
+    "ss01" on,
+    "ss05" on;
+  font-stretch: 99%;
+}

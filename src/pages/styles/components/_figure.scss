@@ -1,0 +1,26 @@
+@use '../variables' as *;
+@use '../mixins/typography' as *;
+@use '../mixins/utils' as *;
+
+.bleed {
+  margin: 0;
+  float: top;
+  float-reference: page;
+}
+
+.bleed img {
+  width: calc(100% + var(--page-mo));
+  margin-outside: calc(var(--page-mo) * -1);
+  display: block;
+  height: calc-size(auto, round(down, size, var(--baseline)));
+  object-fit: cover;
+}
+
+figcaption {
+  clear: both;
+  padding-top: var(--baseline);
+  height: calc-size(auto, round(up, size, var(--baseline)));
+  padding-bottom: calc(3 * var(--baseline));
+  font-size: 7.5pt;
+  text-box: trim-both cap alphabetic;
+}

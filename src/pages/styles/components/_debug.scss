@@ -1,0 +1,14 @@
+@use '../variables' as *;
+@use '../mixins/typography' as * ;
+@use "sass:color";
+@use "sass:math";
+@use 'sass:string' as *;
+
+$debug-row: color.adjust(cyan, $alpha: -0.5);
+$debug-col: color.adjust(magenta, $alpha: -0.95);
+
+body {
+  position: relative;
+  background-image: linear-gradient($debug-row 0.5pt, transparent 0.5pt);
+  background-size: 100% var(--baseline);
+}

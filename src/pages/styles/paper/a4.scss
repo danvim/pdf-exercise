@@ -1,0 +1,101 @@
+@use "../mixins/utils" as *;
+
+@page {
+  size: a4;
+  margin-top: var(--page-mt);
+  margin-bottom: var(--page-mb);
+  margin-inside: var(--page-mi);
+  margin-outside: var(--page-mo);
+
+  @bottom-center {
+    content: string(subsection);
+    font-family: "Mona Sans", sans-serif;
+    font-size: 8.5pt;
+    line-height: 1.4;
+    font-weight: 600;
+    font-feature-settings:
+      "case" on,
+      "ss01" on,
+      "ss05" on;
+    vertical-align: top;
+    padding-top: 0.3cm;
+    padding-left: 1cm;
+    padding-right: 1cm;
+  }
+}
+
+@page :first {
+  margin: 0 0 1.5cm;
+
+  @bottom-right {
+    content: none;
+  }
+}
+
+
+@page :left {
+  @bottom-left {
+    content: counter(page);
+    font-family: "Mona Sans", sans-serif;
+    font-size: 8.5pt;
+    line-height: 1.4;
+    font-weight: 600;
+    font-feature-settings:
+      "case" on,
+      "ss01" on,
+      "ss05" on;
+    vertical-align: top;
+    padding-top: 0.3cm;
+  }
+
+  @bottom-center {
+    text-align: left;
+  }
+}
+
+@page :right {
+  @bottom-right {
+    content: counter(page);
+    font-family: "Mona Sans", sans-serif;
+    font-size: 8.5pt;
+    line-height: 1.4;
+    font-weight: 600;
+    font-feature-settings:
+      "case" on,
+      "ss01" on,
+      "ss05" on;
+    margin-bottom: 1cm;
+    vertical-align: top;
+    padding-top: 0.3cm;
+  }
+
+  @bottom-center {
+    text-align: right;
+  }
+}
+
+@page :blank {
+  content: "[this page intentionally left blank]";
+  text-align: center;
+  font-family: "Mona Sans", sans-serif;
+  font-size: 8.5pt;
+  line-height: 1.4;
+  font-weight: 300;
+  font-feature-settings:
+    "case" on,
+    "ss01" on,
+    "ss05" on;
+}
+
+:root {
+  --page-mt: 4cm;
+  --page-mb: 1.5cm;
+  --page-mi: 1cm;
+  --page-mo: 2.1cm;
+
+  --cover-page-ml: 2.5cm;
+
+  --page-cols: 12;
+  --page-col-gap: 4mm;
+  --baseline: 11.9pt;
+}

@@ -1,0 +1,9 @@
+@use 'sass:string' as *;
+
+@mixin span-cols($num) {
+  width: calc(var(--page-col-w) * $num + var(--page-col-gap) * ($num - 1));
+}
+
+@function offset-col($num) {
+  @return calc(var(--page-col-w) * $num + var(--page-col-gap) * $num);
+}

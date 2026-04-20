@@ -1,0 +1,50 @@
+@use '../mixins/typography' as *;
+
+@page Section {
+}
+
+.section {
+  break-before: right;
+  page: Section;
+  break-after: page;
+}
+
+.subsection {
+  break-before: page;
+}
+
+.toc {
+  display: block;
+  padding-left: 0;
+  margin: 0;
+  columns: 3;
+  column-fill: auto;
+}
+
+.toc li {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 1lh;
+}
+
+.toc li::marker {
+  content: "";
+}
+
+.toc a {
+  display: block;
+  text-decoration: none;
+  color: var(--black);
+  position: relative;
+  padding-left: 1cm;
+  @include font-size(8.5pt);
+
+}
+
+.toc a::before {
+    position: absolute;
+    left: 0;
+    top:0;
+  content: target-counter(attr(href), page);
+  @include font-size(8.5pt);
+}

@@ -1,0 +1,13 @@
+@use "sass:math";
+@use "sass:string" as *;
+@use "./mixins/utils" as *;
+
+$columns: 12;
+
+$font-cap-h: 0.72;
+
+// derived
+:root {
+  --page-col-w: calc((100vw - var(--page-mi) - var(--page-mo) - var(--page-col-gap) * (var(--page-cols) - 1)) / var(--page-cols));
+  --cover-col-w: calc((100vw - var(--cover-mi) - var(--cover-mo) - var(--cover-col-gap) * (var(--cover-cols) - 1)) / var(--cover-cols));
+}

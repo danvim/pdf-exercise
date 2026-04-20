@@ -1,0 +1,33 @@
+#cover {
+  height: 100vh;
+  padding: 19mm var(--page-mo) 0 var(--cover-page-ml);
+
+  .book-title {
+    font-size: 60pt;
+    margin: 0;
+    position: absolute;
+    bottom: 16.7cm;
+    line-height: 1;
+    left: var(--cover-page-ml);
+    right: var(--page-mo);
+  }
+
+  .logo {
+    position: absolute;
+    top:var(--page-mi);
+    right: var(--page-mi);
+    height: 17mm;
+    width: auto;
+  }
+
+  #cover-graphics {
+    position: absolute;
+    display: block;
+    left: 0;
+    height: 153mm;
+    width: 210mm;
+    bottom: 0.5cm;
+    object-fit: cover;
+    clip-path: url(/public/step.svg#steps);
+  }
+}

@@ -1,0 +1,25 @@
+@use '../mixins/typography' as *;
+
+.table-header {
+  border-top: 0.5pt solid var(--black);
+  margin-bottom: 6pt;
+}
+
+table.table {
+  border-collapse: collapse;
+  width: 100%;
+  break-inside: avoid;
+}
+
+table.table th, table.table td {
+  @include font-size(7.5pt);
+  padding: 3.05pt 0;
+  margin-bottom: 0;
+  text-align: left;
+  border-bottom: 0.5pt solid var(--gray-4);
+}
+
+table.table th {
+  font-weight: 600;
+  border-bottom: 0.5pt solid var(--black);
+}

@@ -1,0 +1,28 @@
+@use '../mixins/typography' as *;
+
+@-adapt-footnote-area ::before {
+  border-block-start-color: transparent;
+  border-block-start-width: 0;
+}
+
+span.footnote {
+  float: footnote;
+  font-size: 6pt;
+}
+
+.footnote::footnote-call {
+  content: counter(footnote, decimal) " ";
+  vertical-align: super;
+  font-weight: 600;
+  font-size: 6pt;
+}
+
+.footnote::footnote-marker {
+  content: counter(footnote, decimal);
+  font-weight: 600;
+  margin-right: 2mm;
+}
+
+.footnote::before {
+  border: none;
+}

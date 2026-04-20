@@ -1,0 +1,164 @@
+@use "./mixins/typography" as *;
+@use "./variables" as *;
+
+:root {
+  --black: #000000;
+  --gray-6: #575757;
+  --gray-5: #7c7c7b;
+  --gray-4: #a8a8a7;
+  --gray-3: #dadada;
+  --gray-2: #e6e7e8;
+  --gray-1: #f1f2f2;
+  --white: #ffffff;
+
+  --blue-dark: #003868;
+  --blue-mid: #004c97;
+  --blue-bright: #0072ce;
+  --blue-light: #adc8e9;
+}
+
+h4, h5, h6, html {
+  font-family: 'Mona Sans', 'Segoe UI', system-ui, sans-serif;
+  font-weight: 300;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+.book-title,
+h1,
+h2,
+h3,
+.headline {
+  font-family: "Archivo", sans-serif;
+  font-weight: 380;
+  font-style: normal;
+  font-variation-settings: "wdth" 95;
+  font-stretch: 100%;
+}
+
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  font-stretch: 100%;
+}
+
+h1 {
+  @include font-size(30pt, 30pt);
+  letter-spacing: 0.01em;
+  margin-bottom: 2cm;
+
+  string-set: section content(), subsection "";
+  counter-increment: section;
+  counter-reset: subsection;
+}
+
+
+h2 {
+  @include font-size(30pt, 30pt);
+  letter-spacing: 0.01em;
+
+  string-set: subsection content();
+  counter-increment: section;
+}
+
+h3 {
+  @include font-size(15.5pt, calc(var(--baseline) * 1.5));
+  padding-top: 0;
+  letter-spacing: 0.03em;
+  
+  height: calc-size(auto, round(up, size, var(--baseline)));
+}
+
+h4 {
+  @include font-size(11pt);
+  letter-spacing: 0.03em;
+}
+
+h5 {
+  @include font-size(10.5pt);
+  margin-bottom: var(--baseline);
+}
+
+h6 {
+  @include font-size(8.5pt);
+}
+
+.section-title {
+  font-size: 30pt;
+  text-wrap: balance;
+}
+
+h2.section-title {
+  height: 2cm;
+  break-before: page;
+  margin-top: -3cm;
+  margin-bottom: 1cm;
+  float: top;
+  float-reference: page;
+}
+
+p {
+  @include font-size(8.5pt);
+  margin-bottom: 1lh;
+  hyphens: auto;
+}
+
+li {
+  @include font-size(8.5pt);
+}
+
+.lead {
+  margin-bottom: calc(3 * var(--baseline));
+}
+
+.col-2 {
+  columns: 2;
+  column-gap: 0.6cm;
+  column-fill: balance;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+p, li {
+  margin-top: 0;
+  text-wrap: pretty;
+}
+
+p, ul, ol {
+  margin-bottom: 1lh;
+}
+
+p:has(+ *:is(ul, ol)) {
+  margin-bottom: 0;
+}
+
+ul {
+  list-style-type: none;
+  list-style-position: outside;
+  padding: 0;
+  margin: 0;
+  margin-bottom: var(--baseline);
+  break-inside: avoid;
+}
+
+ul > li {
+  position: relative;
+  padding-left: calc(4mm - 4pt);
+  margin-left: 4pt;
+}
+
+ul > li::marker {
+  content: "￭";
+}
+
+.align-baseline {
+  height: calc-size(auto, round(up, size, var(--baseline)));
+  margin-bottom: var(--baseline);
+}
