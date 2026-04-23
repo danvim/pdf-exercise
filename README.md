@@ -1,29 +1,24 @@
-# 11ty Starter with MDX, TSX, and SASS
+# pdf-exercise
 
-This is a starter project for Eleventy (11ty) using pnpm, TypeScript, React/TSX, MDX, and SASS.
+This exercise is paired with a tech talk I gave for Codeaholics in April 2026.
 
-## Features
-- Eleventy static site generator
-- MDX support for Markdown + JSX
-- TypeScript and TSX for components
-- SASS for styling
+[Slides](./Typesetting%20PDFs%20with%20Web%20Standards.pdf)
 
-## Getting Started
+This project is an exercise replicating an annual report PDF using HTML and CSS, targeting supported CSS features of [Vivliostyle.js](https://vivliostyle.org/) and Chromium. The goal of this demo is to showcase the extent of capabilities of Vivliostyle on Chromium by tackling commonly faced PDF generation challenges and graphic design/typography challenges.
 
-1. Install dependencies:
-   ```sh
-   pnpm install
-   ```
-2. Build and run Eleventy:
-   ```sh
-   pnpm run build
-   pnpm run start
-   ```
+This repo uses TypeScript and React, but any toolchain that outputs HTML/CSS can feed Vivliostyle the same way.
 
-## Customization
-- Add `.mdx` or `.tsx` files to the `src/pages` directory.
-- SASS files go in `src/styles`.
+## Run the demo
 
-## Scripts
-- `build`: Build the site
-- `start`: Start Eleventy in development mode
+```sh
+pnpm install
+pnpm run start
+```
+
+Copy the local URL from your terminal. Open [Vivliostyle Viewer](https://vivliostyle.org/viewer/), paste that URL, and load the document. The viewer runs entirely in your browser; you can also host the viewer library yourself.
+
+Use the browser’s Print dialog (<kbd>Ctrl</kbd>+<kbd>P</kbd> / <kbd>Cmd</kbd>+<kbd>P</kbd>) to save or print to PDF.
+
+## Resources
+
+- [Vivliostyle CLI](https://docs.vivliostyle.org/en/cli/): More akin to a LaTeX project, with the ability to output PDF from a project directory.
